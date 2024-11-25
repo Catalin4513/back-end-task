@@ -1,4 +1,4 @@
-![Logo](https://bend.md/images/5e8730206d541c6309354d3e_image%20(4).png)
+![Logo](<https://bend.md/images/5e8730206d541c6309354d3e_image%20(4).png>)
 
 # Back-End Task
 

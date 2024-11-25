@@ -1,9 +1,11 @@
 import { Sequelize, DataTypes } from 'sequelize';
 
-import { Post } from '../repositories/posts';
-
-export function setupPostsModel(modelName: string, sequelize: Sequelize): void {
-  Post.init(
+export function setupCommentsModel(
+  modelName: string,
+  sequelize: Sequelize,
+): void {
+  sequelize.define(
+    modelName,
     {
       id: {
         type: DataTypes.INTEGER,
@@ -11,21 +13,18 @@ export function setupPostsModel(modelName: string, sequelize: Sequelize): void {
         allowNull: false,
         autoIncrement: true,
       },
-      title: {
-        type: DataTypes.STRING,
+      postId: {
+        type: DataTypes.INTEGER,
         allowNull: false,
-        unique: true,
+      },
+      authorId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
       },
       content: {
         type: DataTypes.TEXT,
         allowNull: false,
         unique: false,
-      },
-      isHidden: {
-        type: DataTypes.BOOLEAN,
-        field: 'is_hidden',
-        allowNull: false,
-        defaultValue: false,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -41,12 +40,11 @@ export function setupPostsModel(modelName: string, sequelize: Sequelize): void {
       },
     },
     {
-      sequelize,
-      tableName: 'posts',
+      tableName: 'comments',
       modelName,
       name: {
-        singular: 'post',
-        plural: 'posts',
+        singular: 'comment',
+        plural: 'comments',
       },
       timestamps: true,
     },

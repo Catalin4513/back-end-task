@@ -5,24 +5,13 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "plugins": ["@typescript-eslint"],
   "parserOptions": {
     "project": "tsconfig.json"
   },
   "rules": {
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ]
+    "quotes": ["error", "single"],
+    "comma-dangle": ["error", "always-multiline"],
+    "semi": ["error", "always"]
   }
 }

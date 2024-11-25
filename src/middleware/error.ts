@@ -9,9 +9,7 @@ export function initErrorRequestHandler(): ErrorRequestHandler {
       return next(error);
     }
 
-    const httpError = error instanceof HttpError
-      ? error
-      : convertError(error);
+    const httpError = error instanceof HttpError ? error : convertError(error);
 
     const { name, message, stack, httpCode } = httpError;
 
